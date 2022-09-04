@@ -9,7 +9,6 @@ import {
   Input,
   Button,
   ErrorMessage,
-  ListError,
   Title,
 } from "./RegisterPage.styled";
 
@@ -111,19 +110,6 @@ const Register = () => {
             size={25}
           />
         </Label>
-        {/* <ErrorMessage>
-          {errors?.password && (
-            <ErrorMessage>
-              <ListError>
-                <li>At least 6 characters long.</li>
-                <li>Contains at least 1 number.</li>
-                <li>Containsat least 1 lowercase letter.</li>
-                <li>Contains at least 1 uppercase letter.</li>
-                <li>Contains a special character(!@#$%^&* _= +-)</li>
-              </ListError>
-            </ErrorMessage>
-          )}
-        </ErrorMessage> */}
         {isValid && (
           <Button
             type="submit"

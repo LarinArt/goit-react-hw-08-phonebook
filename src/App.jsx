@@ -1,24 +1,13 @@
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import { PrivateRoute } from "components/PrivateRoute/PrivateRoute";
-import { PublicRoute } from "components/PublicRoute/PublicRoute";
+import { PrivateRoute, PublicRoute } from "hoc";
 import { Loader } from "components/ui/Loader/Loader";
 
-const Layout = lazy(() =>
-  import("components/Layout/Layout" /* webpackChunkName: "layout" */)
-);
-const HomePage = lazy(() =>
-  import("pages/HomePage/HomePage" /* webpackChunkName: "HomePage" */)
-);
-const ContactsPage = lazy(() =>
-  import("pages/ContactsPage" /* webpackChunkName: "ContactsPage" */)
-);
-const Login = lazy(() =>
-  import("pages/LoginPage" /* webpackChunkName: "Login" */)
-);
-const Register = lazy(() =>
-  import("pages/RegisterPage/RegisterPage" /* webpackChunkName: "Register" */)
-);
+const Layout = lazy(() => import("components/Layout/Layout"));
+const HomePage = lazy(() => import("pages/HomePage/HomePage"));
+const ContactsPage = lazy(() => import("pages/ContactsPage"));
+const Login = lazy(() => import("pages/LoginPage"));
+const Register = lazy(() => import("pages/RegisterPage/RegisterPage"));
 
 export const App = () => {
   return (

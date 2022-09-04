@@ -31,5 +31,5 @@ const MainWrapper = styled.div`
   background-attachment: fixed;
   width: 100%;
   overflow-y: scroll;
-  max-height: calc(100vh - 56px - 62px);
+  max-height: calc(100vh - 148px);
 `;

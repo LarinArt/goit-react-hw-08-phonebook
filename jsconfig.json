@@ -3,6 +3,5 @@
         "baseUrl": "src"
     },
     "include": [
-        "src"
-, "src/components/Layout/Wrapper/.styled.jsx"    ]
+        "src" ]
 }

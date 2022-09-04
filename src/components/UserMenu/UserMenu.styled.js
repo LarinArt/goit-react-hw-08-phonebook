@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { FaUser } from "react-icons/fa";
+import styled from 'styled-components';
+import { FaUser } from 'react-icons/fa';
 
 export const UserContainer = styled.div`
   display: flex;
@@ -7,8 +7,9 @@ export const UserContainer = styled.div`
 `;
 
 export const AvatarImg = styled(FaUser)`
-  margin-right: 6px;
+  margin-right: 10px;
   border-radius: 50%;
+  fill: #fff;
 `;
 
 export const UserName = styled.span`

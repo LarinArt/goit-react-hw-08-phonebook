@@ -1,12 +1,11 @@
 import styled from "styled-components";
-// import Bg from "components/images/Bg.jpg";
 
 const Wrapper = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 56px - 62px);
+  min-height: calc(100vh - 148px);
 
   background-position: center;
 `;
