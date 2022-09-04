@@ -1,12 +1,12 @@
-import { useSelector } from "react-redux";
-import authSelectors from "redux/auth/auth-selector";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
-import { AuthNav } from "components/UserMenu/AuthNav";
-import { UserMenu } from "components/UserMenu/UserMenu";
-import { motion } from "framer-motion";
-import { BiHome } from "react-icons/bi";
-import styled from "styled-components";
+import { useSelector } from 'react-redux';
+import authSelectors from 'redux/auth/auth-selector';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import { NavLink, Link } from 'react-router-dom';
+import { AuthNav } from 'layout/common/AuthNav';
+import { UserMenu } from 'layout/common/UserMenu/UserMenu';
+import { motion } from 'framer-motion';
+import { BiHome } from 'react-icons/bi';
+import styled from 'styled-components';
 
 const UserIcon = styled(BiHome)`
   margin-right: 10px;
@@ -35,7 +35,7 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
             <Navbar.Brand
-              style={{ fontSize: "40px", fontWeight: "900" }}
+              style={{ fontSize: '40px', fontWeight: '900' }}
               as={Link}
               to="/"
             >
@@ -46,7 +46,7 @@ const Header = () => {
               id="responsive-navbar-nav"
               className="navbar-collapse collapse justify-content-between"
             >
-              <Nav style={{ alignItems: "center" }}>
+              <Nav style={{ alignItems: 'center' }}>
                 <Nav.Link active as={NavLink} to="/">
                   <UserIcon />
                 </Nav.Link>

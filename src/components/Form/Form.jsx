@@ -1,39 +1,39 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   useGetContactsQuery,
   useCreateContactMutation,
-} from "redux/contacts/contactsApi";
-import PhoneInput from "react-phone-number-input";
-import Input from "components/Input";
-import { TailSpin } from "react-loader-spinner";
-import { motion } from "framer-motion";
-import "react-phone-number-input/style.css";
-import { FormContainer, BtnSubmit } from "./Form.styled";
-import { toast } from "react-toastify";
+} from 'redux/contacts/contactsApi';
+import PhoneInput from 'react-phone-number-input';
+import Input from 'components/Form/Input';
+import { TailSpin } from 'react-loader-spinner';
+import { motion } from 'framer-motion';
+import 'react-phone-number-input/style.css';
+import { FormContainer, BtnSubmit } from './Form.styled';
+import { toast } from 'react-toastify';
 
 const Form = () => {
   const [createContact, { isLoading }] = useCreateContactMutation();
   const { data: contacts } = useGetContactsQuery();
 
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
-  const handleInputChange = (e) => {
+  const handleInputChange = e => {
     setName(e.currentTarget.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     if (number.length > 13) {
-      return alert("Please enter correct phone number");
+      return alert('Please enter correct phone number');
     }
 
-    const checkName = contacts.find((el) => el.name === name);
+    const checkName = contacts.find(el => el.name === name);
 
     checkName === undefined
       ? createContact({ name, number })
       : toast.error(`${name} is already in contacts.`, {
           position: toast.POSITION.TOP_RIGHT,
-          theme: "dark",
+          theme: 'dark',
         });
 
     e.preventDefault();
@@ -41,8 +41,8 @@ const Form = () => {
   };
 
   const reset = () => {
-    setName("");
-    setNumber("");
+    setName('');
+    setNumber('');
   };
 
   return (
@@ -63,7 +63,7 @@ const Form = () => {
         />
         <PhoneInput
           defaultCountry="UA"
-          onChange={(number) => {
+          onChange={number => {
             setNumber(number);
           }}
           region="Europe"
