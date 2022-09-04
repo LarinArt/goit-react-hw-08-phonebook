@@ -8,7 +8,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Hello, my friend! I'm yours —"], // Strings to display
+      strings: ["Hello, my friend! I'm yours —"],
       startDelay: 1200,
       typeSpeed: 60,
       showCursor: false,

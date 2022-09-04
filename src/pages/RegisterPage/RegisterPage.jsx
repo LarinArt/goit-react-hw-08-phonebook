@@ -1,8 +1,8 @@
-import { useDispatch } from "react-redux";
-import { motion } from "framer-motion";
-import authOperations from "redux/auth/auth-operations";
-import { useForm } from "react-hook-form";
-import { GrMailOption, GrKey, GrUser } from "react-icons/gr";
+import { useDispatch } from 'react-redux';
+import { motion } from 'framer-motion';
+import authOperations from 'redux/auth/auth-operations';
+import { useForm } from 'react-hook-form';
+import { GrMailOption, GrKey, GrUser } from 'react-icons/gr';
 import {
   Form,
   Label,
@@ -10,7 +10,7 @@ import {
   Button,
   ErrorMessage,
   Title,
-} from "./RegisterPage.styled";
+} from './RegisterPage.styled';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -21,10 +21,10 @@ const Register = () => {
     handleSubmit,
     reset,
   } = useForm({
-    mode: "onChange",
+    mode: 'onChange',
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     dispatch(authOperations.register(data));
     reset();
   };
@@ -41,19 +41,19 @@ const Register = () => {
           Name
           <Input
             type="text"
-            {...register("name", {
-              required: "Name is required",
+            {...register('name', {
+              required: 'Name is required',
               minLength: {
                 value: 3,
-                message: "Please enter correct name (min 3 letter)",
+                message: 'Please enter correct name (min 3 letter)',
               },
             })}
           />
           <GrUser
             style={{
-              position: "absolute",
-              top: "35px",
-              left: "8px",
+              position: 'absolute',
+              top: '35px',
+              left: '8px',
             }}
             size={25}
           />
@@ -65,20 +65,20 @@ const Register = () => {
           Email
           <Input
             type="email"
-            {...register("email", {
-              required: "Email is required",
+            {...register('email', {
+              required: 'Email is required',
               pattern: {
                 value:
                   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                message: "Please enter a valid email «example@mail.com»",
+                message: 'Please enter a valid email «example@mail.com»',
               },
             })}
           />
           <GrMailOption
             style={{
-              position: "absolute",
-              top: "35px",
-              left: "8px",
+              position: 'absolute',
+              top: '35px',
+              left: '8px',
             }}
             size={25}
           />
@@ -92,20 +92,19 @@ const Register = () => {
           Password
           <Input
             type="password"
-            {...register("password", {
-              required: "Required field!",
+            {...register('password', {
+              required: 'Required field!',
               pattern: {
-                // value:
-                //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,15}$/,
-                message: "",
+                value: /^[A-Za-z]\w{7,14}$/,
+                message: '',
               },
             })}
           />
           <GrKey
             style={{
-              position: "absolute",
-              top: "35px",
-              left: "8px",
+              position: 'absolute',
+              top: '35px',
+              left: '8px',
             }}
             size={25}
           />

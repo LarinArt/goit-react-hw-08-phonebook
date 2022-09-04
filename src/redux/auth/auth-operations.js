@@ -13,7 +13,6 @@ const token = {
   },
 };
 
-///Register User
 
 const register = createAsyncThunk("auth/register", async (credentials) => {
   try {
@@ -38,7 +37,6 @@ const register = createAsyncThunk("auth/register", async (credentials) => {
   }
 });
 
-//LogIn User
 
 const logIn = createAsyncThunk("auth/login", async (credentials) => {
   try {
@@ -56,7 +54,6 @@ const logIn = createAsyncThunk("auth/login", async (credentials) => {
   }
 });
 
-//LogOut User
 
 const logOut = createAsyncThunk("auth/logout", async (credentials) => {
   try {
@@ -75,7 +72,6 @@ const logOut = createAsyncThunk("auth/logout", async (credentials) => {
   }
 });
 
-//After refresh page
 
 const fetchCurrentUser = createAsyncThunk(
   "auth/refresh",

@@ -1,12 +1,11 @@
-import { useSelector } from "react-redux";
-import authSelectors from "redux/auth/auth-selector";
-import { useGetContactsQuery } from "redux/contacts/contactsApi";
-import Container from "components/ui/Container";
-import Form from "components/Form";
-import List from "components/ContactsList";
-import Filter from "components/Filter/FIlter";
-import styled from "styled-components";
-// import Bg from "components/images/Bg.jpg";
+import { useSelector } from 'react-redux';
+import authSelectors from 'redux/auth/auth-selector';
+import { useGetContactsQuery } from 'redux/contacts/contactsApi';
+import Container from 'components/ui/Container';
+import Form from 'components/Form';
+import List from 'components/ContactsList';
+import Filter from 'components/Filter/FIlter';
+import styled from 'styled-components';
 
 const ContactsPage = () => {
   const { data } = useGetContactsQuery();
@@ -15,7 +14,7 @@ const ContactsPage = () => {
     <MainWrapper>
       <Container>
         <Form />
-        {isLoggedIn && data && (data.length > 1 ? <Filter /> : "")}
+        {isLoggedIn && data && (data.length > 1 ? <Filter /> : '')}
         <List />
       </Container>
     </MainWrapper>
