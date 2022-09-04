@@ -15,7 +15,7 @@ export const TextTyped = styled.p`
 `;
 
 export const Title = styled.h1`
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 900;
   text-align: center;
 `;
