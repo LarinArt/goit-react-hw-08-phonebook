@@ -95,7 +95,7 @@ const Register = () => {
             {...register('password', {
               required: 'Required field!',
               pattern: {
-                value: /^[A-Za-z]\w{7,14}$/,
+                // value: /^[A-Za-z]\w{7,14}$/,
                 message: '',
               },
             })}
