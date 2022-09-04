@@ -1,19 +1,19 @@
-import { Suspense, lazy } from "react";
-import { Routes, Route } from "react-router-dom";
-import { PrivateRoute, PublicRoute } from "hoc";
-import { Loader } from "components/ui/Loader/Loader";
+import { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { PrivateRoute, PublicRoute } from 'hoc';
+import { Loader } from 'components/ui/Loader/Loader';
 
-const Layout = lazy(() => import("components/Layout/Layout"));
-const HomePage = lazy(() => import("pages/HomePage/HomePage"));
-const ContactsPage = lazy(() => import("pages/ContactsPage"));
-const Login = lazy(() => import("pages/LoginPage"));
-const Register = lazy(() => import("pages/RegisterPage/RegisterPage"));
+const SharedLayout = lazy(() => import('layout/SharedLayout'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage'));
+const Login = lazy(() => import('pages/LoginPage'));
+const Register = lazy(() => import('pages/RegisterPage/RegisterPage'));
 
 export const App = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
           <Route
             path="contacts"
